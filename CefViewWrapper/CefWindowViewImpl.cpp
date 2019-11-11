@@ -26,6 +26,7 @@ CefWindowViewImpl::CefWindowViewImpl(HWND parent)
 {
 	standard_wind_.SetDelegate(this);
 	standard_wind_.CreateBaseWindow(parent);
+	SetWindowLong(standard_wind_.GetHwnd(), GWL_EXSTYLE, WS_EX_TOOLWINDOW);
 
 	// Set window info
 	CefWindowInfo window_info;

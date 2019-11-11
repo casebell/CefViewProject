@@ -133,11 +133,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ::SetParent(cef_view->GetBrowserHolderWindow(), hWnd);
 
-   cef_view2 = wrapper->CreateCefView(hWnd);
+   cef_view2 = wrapper->CreateCefView(NULL);
    cef_view2->SetGeometry(0, 0, 500, 500);
    cef_view2->Show();
 
-   ::SetParent(cef_view2->GetBrowserHolderWindow(), hWnd);
+   //::SetParent(cef_view2->GetBrowserHolderWindow(), hWnd);
 
    return TRUE;
 }
