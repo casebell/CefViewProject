@@ -23,7 +23,7 @@ public:
 		virtual void OnBrowserDestroyed() {}
 	DELEGATE_FUNC_END
   // Provide access to the single global instance of this object.
-  static SimpleHandler* GetInstance();
+
 
   // CefClient methods:
   virtual CefRefPtr<CefDisplayHandler> GetDisplayHandler() OVERRIDE {

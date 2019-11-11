@@ -19,7 +19,6 @@
 
 namespace {
 
-SimpleHandler* g_instance = NULL;
 
 // Returns a data: URI with the specified contents.
 std::string GetDataURI(const std::string& data, const std::string& mime_type) {
@@ -32,18 +31,13 @@ std::string GetDataURI(const std::string& data, const std::string& mime_type) {
 
 SimpleHandler::SimpleHandler(bool use_views)
     : use_views_(use_views), is_closing_(false) {
-  DCHECK(!g_instance);
-  g_instance = this;
+
 }
 
 SimpleHandler::~SimpleHandler() {
-  g_instance = NULL;
+
 }
 
-// static
-SimpleHandler* SimpleHandler::GetInstance() {
-  return g_instance;
-}
 
 void SimpleHandler::OnTitleChange(CefRefPtr<CefBrowser> browser,
                                   const CefString& title) {

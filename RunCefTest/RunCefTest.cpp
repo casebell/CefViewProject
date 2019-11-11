@@ -15,6 +15,7 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 主窗口类名
 
 CefViewWrapper * wrapper;
 CefWindowView * cef_view;
+CefWindowView * cef_view2;
 // 此代码模块中包含的函数的前向声明:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
@@ -58,6 +59,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             DispatchMessage(&msg);
         }
     }
+	wrapper->DeleteCefView(cef_view2);
 	wrapper->DeleteCefView(cef_view);
 	wrapper->UnInit();
 
@@ -129,8 +131,13 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    cef_view->SetGeometry(200, 200, 500, 500);
    cef_view->Show();
 
+   ::SetParent(cef_view->GetBrowserHolderWindow(), hWnd);
 
-   //::SetParent(cef_view->GetBrowserHolderWindow(), hWnd);
+   cef_view2 = wrapper->CreateCefView(hWnd);
+   cef_view2->SetGeometry(0, 0, 500, 500);
+   cef_view2->Show();
+
+   ::SetParent(cef_view2->GetBrowserHolderWindow(), hWnd);
 
    return TRUE;
 }
