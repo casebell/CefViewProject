@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="FileTree">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Comm">
+      <UniqueIdentifier>{ff101893-ebd7-4f8f-8acf-8f576e9305bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Comm\app">
+      <UniqueIdentifier>{bab7468d-8314-4bdb-8d60-a4a6f4161fc5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CefViewWrapper.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CefViewWrapperImpl.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="simple_handler.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CommDef.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CefWindowViewImpl.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="CommStruct.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Comm\app\utils_app.h">
+      <Filter>Comm\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Comm\app\env_base.h">
+      <Filter>Comm\app</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardWindow.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+    <ClInclude Include="simple_app.h">
+      <Filter>FileTree</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+    <ClCompile Include="CefViewWrapper.cpp">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+    <ClCompile Include="CefViewWrapperImpl.cpp">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+    <ClCompile Include="simple_handler.cc">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+    <ClCompile Include="CefWindowViewImpl.cpp">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Comm\app\env_base.cpp">
+      <Filter>Comm\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Comm\app\utils_app.cpp">
+      <Filter>Comm\app</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardWindow.cpp">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+    <ClCompile Include="simple_app.cc">
+      <Filter>FileTree</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
