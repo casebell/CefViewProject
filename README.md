@@ -2,7 +2,7 @@
 A Cef wrapper for windows application, it's on primary stage
 ### Build
 - download and compile CEF
-- create the directories like here below
+- create directories like here below
 ```
 RootDir--CefBuild--include
                  --bin--Debug
