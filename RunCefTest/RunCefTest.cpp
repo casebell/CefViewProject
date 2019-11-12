@@ -136,6 +136,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    cef_view2 = wrapper->CreateCefView(NULL);
    cef_view2->SetGeometry(0, 0, 500, 500);
    cef_view2->Show();
+   cef_view2->LoadUrl("https://tool.lu/coderunner/");
 
    //::SetParent(cef_view2->GetBrowserHolderWindow(), hWnd);
 

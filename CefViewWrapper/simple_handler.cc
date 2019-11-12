@@ -96,9 +96,9 @@ void SimpleHandler::OnBeforeClose(CefRefPtr<CefBrowser> browser) {
     }
   }
 
+  browser = nullptr;
   if (browser_list_.empty()) {
     // All browser windows have closed. Quit the application message loop.
-	  browser = nullptr;
 	  if (GetDelegate())
 		  GetDelegate()->OnBrowserDestroyed();
   }
@@ -135,6 +135,8 @@ void SimpleHandler::CloseAllBrowsers(bool force_close) {
 
   if (browser_list_.empty())
     return;
+  //reset flag
+  is_closing_ = false;
 
   BrowserList::const_iterator it = browser_list_.begin();
   for (; it != browser_list_.end(); ++it)
@@ -148,4 +150,19 @@ CefRefPtr<CefBrowser> SimpleHandler::GetMainBrowser()
 		return *browser_list_.begin();
 	}
 	return nullptr;
+}
+
+void SimpleHandler::LoadUrl(const std::string  &url)
+{
+	if (!CefCurrentlyOn(TID_UI)) {
+		// Execute on the UI thread.
+		CefPostTask(TID_UI, base::Bind(&SimpleHandler::LoadUrl, this,
+			url));
+		return;
+	}
+
+	if (GetMainBrowser())
+	{
+		GetMainBrowser()->GetMainFrame()->LoadURL(url);
+	}
 }

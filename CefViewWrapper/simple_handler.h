@@ -13,7 +13,8 @@
 class SimpleHandler : public CefClient,
                       public CefDisplayHandler,
                       public CefLifeSpanHandler,
-                      public CefLoadHandler {
+                      public CefLoadHandler ,
+                      public CefRequestHandler{
 	CLASS_SUPPORT_DELEGATE
 public:
   explicit SimpleHandler(bool use_views);
@@ -33,6 +34,8 @@ public:
     return this;
   }
   virtual CefRefPtr<CefLoadHandler> GetLoadHandler() OVERRIDE { return this; }
+
+  virtual CefRefPtr<CefRequestHandler> GetRequestHandler() OVERRIDE { return this; }
 
   // CefDisplayHandler methods:
   virtual void OnTitleChange(CefRefPtr<CefBrowser> browser,
@@ -56,6 +59,8 @@ public:
   bool IsClosing() const { return is_closing_; }
 
   CefRefPtr<CefBrowser> GetMainBrowser();
+
+  void LoadUrl(const std::string  &url);
  private:
   // Platform-specific implementation.
   //void PlatformTitleChange(CefRefPtr<CefBrowser> browser,
@@ -69,11 +74,9 @@ public:
   BrowserList browser_list_;
 
   bool is_closing_;
-
+  
   // Include the default reference counting implementation.
   IMPLEMENT_REFCOUNTING(SimpleHandler);
-
-  int close_thread_msg_ = 0;
 };
 
 #endif  // CEF_TESTS_CEFSIMPLE_SIMPLE_HANDLER_H_

@@ -92,7 +92,10 @@ void CefWindowViewImpl::Hide()
 
 void CefWindowViewImpl::LoadUrl(const char * url)
 {
-	
+	if (hander_)
+	{
+		hander_->LoadUrl(url);
+	}
 }
 
 void CefWindowViewImpl::SetGeometry(int x, int y, int w, int h)
