@@ -34,12 +34,8 @@ CefWindowViewImpl::CefWindowViewImpl(HWND parent)
 	window_info.SetAsChild(standard_wind_.GetHwnd(),rc);
 
 	CefBrowserSettings browserSettings;
-	browserSettings.plugins = STATE_ENABLED;	// disable all plugins
-
-	/*QCefSetting::BackgroundColor bc = QCefSetting::GetBackgroundColor();*/
-	//M:±³¾°É«
-	//browserSettings.background_color = CefColorSetARGB(bc.a, bc.r, bc.g, bc.b);
-	//
+	//browserSettings.plugins = STATE_ENABLED;	// disable all plugins
+	
 	hander_ = new SimpleHandler(false);
 	hander_->SetDelegate(this);
 
@@ -60,7 +56,7 @@ CefWindowViewImpl::CefWindowViewImpl(HWND parent)
 
 CefWindowViewImpl::~CefWindowViewImpl()
 {
-	if (hander_)
+	if (hander_ && hander_->GetMainBrowser())
 	{
 		hander_->CloseAllBrowsers(true);
 

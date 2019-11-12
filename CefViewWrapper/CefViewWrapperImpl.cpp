@@ -69,7 +69,7 @@ void CefViewWrapperImpl::SetCachedDirector(const wchar_t * directory, int len)
 
 void CefViewWrapperImpl::SetWindowBackground(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 {
-	
+	settings.background_color = CefColorSetARGB(a, r, g, b);
 }
 
 //void CefViewWrapperImpl::CloseAllWindowViews()

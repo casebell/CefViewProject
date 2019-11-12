@@ -125,6 +125,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
+   wrapper->SetWindowBackground(255,0,0,255);
+
    wrapper->Init();
 
    cef_view = wrapper->CreateCefView(hWnd);
